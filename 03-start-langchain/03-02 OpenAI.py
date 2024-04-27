@@ -1,16 +1,26 @@
+# Python file import 를 위한 설정
+import os
+import sys
+sys.path.append(os.getcwd())
+
+# OpenAI LLM
 from langchain_openai.llms import OpenAI
+
 from langchain.agents import initialize_agent, AgentType
 from langchain_experimental.tools import PythonREPLTool
-from API_KEY import OPENAI_API_KEY
 
-llm = OpenAI(temperature=0, api_key=OPENAI_API_KEY)
+from MY_API_KEY import OPENAI_API_KEY
+
 tools = [
     PythonREPLTool()
 ]
 
-agent = initialize_agent(
-    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
+llm = OpenAI(
+    temperature=0.0, model="gpt-3.5-turbo-instruct", api_key=OPENAI_API_KEY
 )
 
-agent.run("what 4 - 1")
-from langchain.llms.huggingface_hub import HuggingFaceHub
+agent = initialize_agent(
+    tools, llm, AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
+)
+
+agent.invoke('What is 3 + 4')

@@ -1,4 +1,6 @@
+__pycache__
+
 deepnatural-llmops.yaml
 langchain_ai.yaml
 
-API_KEY.py
+MY_API_KEY.py
