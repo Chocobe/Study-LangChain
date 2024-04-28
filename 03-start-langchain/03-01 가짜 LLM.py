@@ -5,7 +5,7 @@ from langchain.agents import AgentType
 # 가짜 LLM
 from langchain.llms.fake import FakeListLLM
 # 터미널 출력을 위한 agent tool
-from langchain_experimental.tools import PythonREPLTool
+from langchain.tools import PythonREPLTool
 
 tools = [
     PythonREPLTool()
