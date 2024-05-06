@@ -5,3 +5,4 @@ study-langchain-conda-env-config.yaml
 gcp__my-langchain-study__service-account.json
 
 MY_API_KEY.py
+sample
